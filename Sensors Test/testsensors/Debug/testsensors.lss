@@ -1,0 +1,1040 @@
+
+testsensors.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000005ee  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000010  00800060  000005ee  00000662  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  00000672  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000006a4  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000048  00000000  00000000  000006e0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000b03  00000000  00000000  00000728  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000005f0  00000000  00000000  0000122b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000078b  00000000  00000000  0000181b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000084  00000000  00000000  00001fa8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00006116  00000000  00000000  0000202c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000079c  00000000  00000000  00008142  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000038  00000000  00000000  000088de  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_macro  00000237  00000000  00000000  00008916  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	29 c0       	rjmp	.+82     	; 0x54 <__ctors_end>
+   2:	00 00       	nop
+   4:	3a c0       	rjmp	.+116    	; 0x7a <__bad_interrupt>
+   6:	00 00       	nop
+   8:	38 c0       	rjmp	.+112    	; 0x7a <__bad_interrupt>
+   a:	00 00       	nop
+   c:	36 c0       	rjmp	.+108    	; 0x7a <__bad_interrupt>
+   e:	00 00       	nop
+  10:	34 c0       	rjmp	.+104    	; 0x7a <__bad_interrupt>
+  12:	00 00       	nop
+  14:	32 c0       	rjmp	.+100    	; 0x7a <__bad_interrupt>
+  16:	00 00       	nop
+  18:	30 c0       	rjmp	.+96     	; 0x7a <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	2e c0       	rjmp	.+92     	; 0x7a <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	2c c0       	rjmp	.+88     	; 0x7a <__bad_interrupt>
+  22:	00 00       	nop
+  24:	2a c0       	rjmp	.+84     	; 0x7a <__bad_interrupt>
+  26:	00 00       	nop
+  28:	28 c0       	rjmp	.+80     	; 0x7a <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	26 c0       	rjmp	.+76     	; 0x7a <__bad_interrupt>
+  2e:	00 00       	nop
+  30:	24 c0       	rjmp	.+72     	; 0x7a <__bad_interrupt>
+  32:	00 00       	nop
+  34:	22 c0       	rjmp	.+68     	; 0x7a <__bad_interrupt>
+  36:	00 00       	nop
+  38:	20 c0       	rjmp	.+64     	; 0x7a <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	1e c0       	rjmp	.+60     	; 0x7a <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	1c c0       	rjmp	.+56     	; 0x7a <__bad_interrupt>
+  42:	00 00       	nop
+  44:	1a c0       	rjmp	.+52     	; 0x7a <__bad_interrupt>
+  46:	00 00       	nop
+  48:	18 c0       	rjmp	.+48     	; 0x7a <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	16 c0       	rjmp	.+44     	; 0x7a <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	14 c0       	rjmp	.+40     	; 0x7a <__bad_interrupt>
+	...
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	ee ee       	ldi	r30, 0xEE	; 238
+  68:	f5 e0       	ldi	r31, 0x05	; 5
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	a0 37       	cpi	r26, 0x70	; 112
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+  76:	19 d0       	rcall	.+50     	; 0xaa <main>
+  78:	b8 c2       	rjmp	.+1392   	; 0x5ea <_exit>
+
+0000007a <__bad_interrupt>:
+  7a:	c2 cf       	rjmp	.-124    	; 0x0 <__vectors>
+
+0000007c <ADC_read>:
+	n is the number of the channel hence corresponding sensor
+	n from 0 to 7 to make sure we have to AND it with 0b00000111
+	*/
+	n &= 0b00000111;  // AND operation with 7
+	
+	ADMUX = (ADMUX & 0xF8)|n;     // clears the bottom 3 bits before ORing
+  7c:	97 b1       	in	r25, 0x07	; 7
+  7e:	98 7f       	andi	r25, 0xF8	; 248
+  80:	87 70       	andi	r24, 0x07	; 7
+  82:	89 2b       	or	r24, r25
+  84:	87 b9       	out	0x07, r24	; 7
+	
+	ADCSRA |= (1<<ADSC);// start single conversion 
+  86:	36 9a       	sbi	0x06, 6	; 6
+	
+	while(ADCSRA & (1<<ADSC));// wait for conversion to complete ADSC becomes '0' again till then, run loop continuously
+  88:	36 99       	sbic	0x06, 6	; 6
+  8a:	fe cf       	rjmp	.-4      	; 0x88 <ADC_read+0xc>
+	
+	return (ADC); //the result of conversion
+  8c:	84 b1       	in	r24, 0x04	; 4
+  8e:	95 b1       	in	r25, 0x05	; 5
+}
+  90:	08 95       	ret
+
+00000092 <Front_Left>:
+
+
+uint16_t Front_Left(void) {
+	uint16_t read1; //read1 With transmitters off and read2 With transmitters on
+	//REC 3 is connected to	AD3
+	read1=ADC_read(3); //noise signal
+  92:	83 e0       	ldi	r24, 0x03	; 3
+  94:	f3 cf       	rjmp	.-26     	; 0x7c <ADC_read>
+	return (read1);
+}
+  96:	08 95       	ret
+
+00000098 <Front_Right>:
+uint16_t Front_Right(void) {
+	uint16_t read1; //read1 With transmitters off and read2 With transmitters on
+	//REC 1 is connected to	AD7
+		read1=ADC_read(7); //noise signal
+  98:	87 e0       	ldi	r24, 0x07	; 7
+  9a:	f0 cf       	rjmp	.-32     	; 0x7c <ADC_read>
+		return (read1);
+	}
+  9c:	08 95       	ret
+
+0000009e <Left>:
+
+uint16_t Left(void) {
+	uint16_t read1; //read1 With transmitters off and read2 With transmitters on
+	//REC 4 is connected to	AD4
+		read1=ADC_read(4); //noise signal
+  9e:	84 e0       	ldi	r24, 0x04	; 4
+  a0:	ed cf       	rjmp	.-38     	; 0x7c <ADC_read>
+		return (read1);
+	}
+  a2:	08 95       	ret
+
+000000a4 <Right>:
+
+uint16_t Right(void) {
+	uint16_t read1; //read1 With transmitters off and read2 With transmitters on
+	//REC 2 is connected to	AD6
+		read1=ADC_read(6); //noise signal
+  a4:	86 e0       	ldi	r24, 0x06	; 6
+  a6:	ea cf       	rjmp	.-44     	; 0x7c <ADC_read>
+		return (read1);
+	}
+  a8:	08 95       	ret
+
+000000aa <main>:
+uint16_t ADC_read(uint8_t n);
+
+uint16_t Front_Left(void);
+
+
+int main() {
+  aa:	cf 93       	push	r28
+  ac:	df 93       	push	r29
+  ae:	cd b7       	in	r28, 0x3d	; 61
+  b0:	de b7       	in	r29, 0x3e	; 62
+  b2:	60 97       	sbiw	r28, 0x10	; 16
+  b4:	0f b6       	in	r0, 0x3f	; 63
+  b6:	f8 94       	cli
+  b8:	de bf       	out	0x3e, r29	; 62
+  ba:	0f be       	out	0x3f, r0	; 63
+  bc:	cd bf       	out	0x3d, r28	; 61
+	char seg_code[]={0xc0,0xf9,0xa4,0xb0,0x99,0x92,0x82,0xf8,0x80,0x90,0x88,0x83,0xc6,0xa1,0x86,0x8e};
+  be:	80 e1       	ldi	r24, 0x10	; 16
+  c0:	e0 e6       	ldi	r30, 0x60	; 96
+  c2:	f0 e0       	ldi	r31, 0x00	; 0
+  c4:	de 01       	movw	r26, r28
+  c6:	11 96       	adiw	r26, 0x01	; 1
+  c8:	01 90       	ld	r0, Z+
+  ca:	0d 92       	st	X+, r0
+  cc:	8a 95       	dec	r24
+  ce:	e1 f7       	brne	.-8      	; 0xc8 <main+0x1e>
+	int   temp,i;
+	uint16_t num;
+	
+	/* Configure the ports as output */
+	DDRB = 0xff; // Data lines
+  d0:	8f ef       	ldi	r24, 0xFF	; 255
+  d2:	87 bb       	out	0x17, r24	; 23
+	DDRD = 0xff; // Control signal PORTD0-PORTD3
+  d4:	81 bb       	out	0x11, r24	; 17
+	
+	
+	ADMUX = (1<<REFS0); // AVCC with external capacitor at AREF pin
+  d6:	80 e4       	ldi	r24, 0x40	; 64
+  d8:	87 b9       	out	0x07, r24	; 7
+	ADCSRA |= (1 << ADEN); // Enable ADC
+  da:	37 9a       	sbi	0x06, 7	; 6
+	ADCSRA |= (1<<ADEN)|(1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0); // pr-scaler = 128
+  dc:	86 b1       	in	r24, 0x06	; 6
+  de:	87 68       	ori	r24, 0x87	; 135
+  e0:	86 b9       	out	0x06, r24	; 6
+	{
+			for (i = 0; i < 100; i++)
+			{
+				num = Right();
+				temp = num / 1000;
+				num = num % 1000;
+  e2:	0f 2e       	mov	r0, r31
+  e4:	f8 ee       	ldi	r31, 0xE8	; 232
+  e6:	ef 2e       	mov	r14, r31
+  e8:	f3 e0       	ldi	r31, 0x03	; 3
+  ea:	ff 2e       	mov	r15, r31
+  ec:	f0 2d       	mov	r31, r0
+				PORTD = SegOne;
+  ee:	dd 24       	eor	r13, r13
+  f0:	d3 94       	inc	r13
+				PORTB = seg_code[temp];
+				_delay_ms(1);
+
+				temp = num / 100;
+				num = num % 100;
+  f2:	04 e6       	ldi	r16, 0x64	; 100
+				PORTD = SegTwo;
+  f4:	12 e0       	ldi	r17, 0x02	; 2
+				PORTB = seg_code[temp];
+				_delay_ms(1);
+
+				temp = num / 10;
+				PORTD = SegThree;
+  f6:	68 94       	set
+  f8:	cc 24       	eor	r12, r12
+  fa:	c2 f8       	bld	r12, 2
+				PORTB = seg_code[temp];
+				_delay_ms(1);
+
+				temp = num % 10;
+				PORTD = SegFour;
+  fc:	68 94       	set
+  fe:	77 24       	eor	r7, r7
+ 100:	73 f8       	bld	r7, 3
+uint16_t ADC_read(uint8_t n);
+
+uint16_t Front_Left(void);
+
+
+int main() {
+ 102:	0f 2e       	mov	r0, r31
+ 104:	f4 e6       	ldi	r31, 0x64	; 100
+ 106:	af 2e       	mov	r10, r31
+ 108:	b1 2c       	mov	r11, r1
+ 10a:	f0 2d       	mov	r31, r0
+
+	while (1)
+	{
+			for (i = 0; i < 100; i++)
+			{
+				num = Right();
+ 10c:	cb df       	rcall	.-106    	; 0xa4 <Right>
+ 10e:	4c 01       	movw	r8, r24
+				temp = num / 1000;
+				num = num % 1000;
+ 110:	ac 01       	movw	r20, r24
+ 112:	56 95       	lsr	r21
+ 114:	47 95       	ror	r20
+ 116:	56 95       	lsr	r21
+ 118:	47 95       	ror	r20
+ 11a:	56 95       	lsr	r21
+ 11c:	47 95       	ror	r20
+ 11e:	9a 01       	movw	r18, r20
+ 120:	a5 ec       	ldi	r26, 0xC5	; 197
+ 122:	b0 e2       	ldi	r27, 0x20	; 32
+ 124:	53 d2       	rcall	.+1190   	; 0x5cc <__umulhisi3>
+ 126:	fc 01       	movw	r30, r24
+ 128:	f2 95       	swap	r31
+ 12a:	e2 95       	swap	r30
+ 12c:	ef 70       	andi	r30, 0x0F	; 15
+ 12e:	ef 27       	eor	r30, r31
+ 130:	ff 70       	andi	r31, 0x0F	; 15
+ 132:	ef 27       	eor	r30, r31
+ 134:	ee 9d       	mul	r30, r14
+ 136:	c0 01       	movw	r24, r0
+ 138:	ef 9d       	mul	r30, r15
+ 13a:	90 0d       	add	r25, r0
+ 13c:	fe 9d       	mul	r31, r14
+ 13e:	90 0d       	add	r25, r0
+ 140:	11 24       	eor	r1, r1
+ 142:	f4 01       	movw	r30, r8
+ 144:	e8 1b       	sub	r30, r24
+ 146:	f9 0b       	sbc	r31, r25
+				PORTD = SegOne;
+ 148:	d2 ba       	out	0x12, r13	; 18
+				PORTB = seg_code[temp];
+ 14a:	40 d2       	rcall	.+1152   	; 0x5cc <__umulhisi3>
+ 14c:	92 95       	swap	r25
+ 14e:	82 95       	swap	r24
+ 150:	8f 70       	andi	r24, 0x0F	; 15
+ 152:	89 27       	eor	r24, r25
+ 154:	9f 70       	andi	r25, 0x0F	; 15
+ 156:	89 27       	eor	r24, r25
+ 158:	a1 e0       	ldi	r26, 0x01	; 1
+ 15a:	b0 e0       	ldi	r27, 0x00	; 0
+ 15c:	ac 0f       	add	r26, r28
+ 15e:	bd 1f       	adc	r27, r29
+ 160:	a8 0f       	add	r26, r24
+ 162:	b9 1f       	adc	r27, r25
+ 164:	8c 91       	ld	r24, X
+ 166:	88 bb       	out	0x18, r24	; 24
+ 168:	89 ef       	ldi	r24, 0xF9	; 249
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 16a:	90 e0       	ldi	r25, 0x00	; 0
+ 16c:	01 97       	sbiw	r24, 0x01	; 1
+ 16e:	f1 f7       	brne	.-4      	; 0x16c <main+0xc2>
+ 170:	00 c0       	rjmp	.+0      	; 0x172 <main+0xc8>
+ 172:	00 00       	nop
+ 174:	4f 01       	movw	r8, r30
+				_delay_ms(1);
+
+				temp = num / 100;
+				num = num % 100;
+ 176:	96 94       	lsr	r9
+ 178:	87 94       	ror	r8
+ 17a:	96 94       	lsr	r9
+ 17c:	87 94       	ror	r8
+ 17e:	94 01       	movw	r18, r8
+ 180:	ab e7       	ldi	r26, 0x7B	; 123
+ 182:	b4 e1       	ldi	r27, 0x14	; 20
+ 184:	23 d2       	rcall	.+1094   	; 0x5cc <__umulhisi3>
+ 186:	ac 01       	movw	r20, r24
+ 188:	56 95       	lsr	r21
+ 18a:	47 95       	ror	r20
+ 18c:	04 9f       	mul	r16, r20
+ 18e:	c0 01       	movw	r24, r0
+ 190:	05 9f       	mul	r16, r21
+ 192:	90 0d       	add	r25, r0
+ 194:	11 24       	eor	r1, r1
+ 196:	af 01       	movw	r20, r30
+ 198:	48 1b       	sub	r20, r24
+ 19a:	59 0b       	sbc	r21, r25
+				PORTD = SegTwo;
+ 19c:	12 bb       	out	0x12, r17	; 18
+				PORTB = seg_code[temp];
+ 19e:	16 d2       	rcall	.+1068   	; 0x5cc <__umulhisi3>
+ 1a0:	96 95       	lsr	r25
+ 1a2:	87 95       	ror	r24
+ 1a4:	e1 e0       	ldi	r30, 0x01	; 1
+ 1a6:	f0 e0       	ldi	r31, 0x00	; 0
+ 1a8:	ec 0f       	add	r30, r28
+ 1aa:	fd 1f       	adc	r31, r29
+ 1ac:	e8 0f       	add	r30, r24
+ 1ae:	f9 1f       	adc	r31, r25
+ 1b0:	80 81       	ld	r24, Z
+ 1b2:	88 bb       	out	0x18, r24	; 24
+ 1b4:	e9 ef       	ldi	r30, 0xF9	; 249
+ 1b6:	f0 e0       	ldi	r31, 0x00	; 0
+ 1b8:	31 97       	sbiw	r30, 0x01	; 1
+ 1ba:	f1 f7       	brne	.-4      	; 0x1b8 <main+0x10e>
+ 1bc:	00 c0       	rjmp	.+0      	; 0x1be <main+0x114>
+ 1be:	00 00       	nop
+				_delay_ms(1);
+
+				temp = num / 10;
+				PORTD = SegThree;
+ 1c0:	c2 ba       	out	0x12, r12	; 18
+				PORTB = seg_code[temp];
+ 1c2:	9a 01       	movw	r18, r20
+ 1c4:	ad ec       	ldi	r26, 0xCD	; 205
+ 1c6:	bc ec       	ldi	r27, 0xCC	; 204
+ 1c8:	01 d2       	rcall	.+1026   	; 0x5cc <__umulhisi3>
+ 1ca:	96 95       	lsr	r25
+ 1cc:	87 95       	ror	r24
+ 1ce:	96 95       	lsr	r25
+ 1d0:	87 95       	ror	r24
+ 1d2:	96 95       	lsr	r25
+ 1d4:	87 95       	ror	r24
+ 1d6:	e1 e0       	ldi	r30, 0x01	; 1
+ 1d8:	f0 e0       	ldi	r31, 0x00	; 0
+ 1da:	ec 0f       	add	r30, r28
+ 1dc:	fd 1f       	adc	r31, r29
+ 1de:	e8 0f       	add	r30, r24
+ 1e0:	f9 1f       	adc	r31, r25
+ 1e2:	20 81       	ld	r18, Z
+ 1e4:	28 bb       	out	0x18, r18	; 24
+ 1e6:	e9 ef       	ldi	r30, 0xF9	; 249
+ 1e8:	f0 e0       	ldi	r31, 0x00	; 0
+ 1ea:	31 97       	sbiw	r30, 0x01	; 1
+ 1ec:	f1 f7       	brne	.-4      	; 0x1ea <main+0x140>
+ 1ee:	00 c0       	rjmp	.+0      	; 0x1f0 <main+0x146>
+ 1f0:	00 00       	nop
+ 1f2:	72 ba       	out	0x12, r7	; 18
+				_delay_ms(1);
+
+				temp = num % 10;
+				PORTD = SegFour;
+ 1f4:	9c 01       	movw	r18, r24
+				PORTB = seg_code[temp];
+ 1f6:	22 0f       	add	r18, r18
+ 1f8:	33 1f       	adc	r19, r19
+ 1fa:	88 0f       	add	r24, r24
+ 1fc:	99 1f       	adc	r25, r25
+ 1fe:	88 0f       	add	r24, r24
+ 200:	99 1f       	adc	r25, r25
+ 202:	88 0f       	add	r24, r24
+ 204:	99 1f       	adc	r25, r25
+ 206:	82 0f       	add	r24, r18
+ 208:	93 1f       	adc	r25, r19
+ 20a:	48 1b       	sub	r20, r24
+ 20c:	59 0b       	sbc	r21, r25
+ 20e:	e1 e0       	ldi	r30, 0x01	; 1
+ 210:	f0 e0       	ldi	r31, 0x00	; 0
+ 212:	ec 0f       	add	r30, r28
+ 214:	fd 1f       	adc	r31, r29
+ 216:	e4 0f       	add	r30, r20
+ 218:	f5 1f       	adc	r31, r21
+ 21a:	80 81       	ld	r24, Z
+ 21c:	88 bb       	out	0x18, r24	; 24
+ 21e:	89 ef       	ldi	r24, 0xF9	; 249
+ 220:	90 e0       	ldi	r25, 0x00	; 0
+ 222:	01 97       	sbiw	r24, 0x01	; 1
+ 224:	f1 f7       	brne	.-4      	; 0x222 <main+0x178>
+ 226:	00 c0       	rjmp	.+0      	; 0x228 <main+0x17e>
+ 228:	00 00       	nop
+ 22a:	91 e0       	ldi	r25, 0x01	; 1
+ 22c:	a9 1a       	sub	r10, r25
+ 22e:	b1 08       	sbc	r11, r1
+ 230:	09 f0       	breq	.+2      	; 0x234 <main+0x18a>
+	ADCSRA |= (1 << ADEN); // Enable ADC
+	ADCSRA |= (1<<ADEN)|(1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0); // pr-scaler = 128
+
+	while (1)
+	{
+			for (i = 0; i < 100; i++)
+ 232:	6c cf       	rjmp	.-296    	; 0x10c <main+0x62>
+ 234:	0f 2e       	mov	r0, r31
+ 236:	f4 e6       	ldi	r31, 0x64	; 100
+ 238:	af 2e       	mov	r10, r31
+ 23a:	b1 2c       	mov	r11, r1
+ 23c:	f0 2d       	mov	r31, r0
+				PORTB = seg_code[temp];
+				_delay_ms(1);
+			}
+			for (i = 0; i < 100; i++)
+			{
+				num = Left();
+ 23e:	2f df       	rcall	.-418    	; 0x9e <Left>
+ 240:	4c 01       	movw	r8, r24
+ 242:	ac 01       	movw	r20, r24
+				temp = num / 1000;
+				num = num % 1000;
+ 244:	56 95       	lsr	r21
+ 246:	47 95       	ror	r20
+ 248:	56 95       	lsr	r21
+ 24a:	47 95       	ror	r20
+ 24c:	56 95       	lsr	r21
+ 24e:	47 95       	ror	r20
+ 250:	9a 01       	movw	r18, r20
+ 252:	a5 ec       	ldi	r26, 0xC5	; 197
+ 254:	b0 e2       	ldi	r27, 0x20	; 32
+ 256:	ba d1       	rcall	.+884    	; 0x5cc <__umulhisi3>
+ 258:	fc 01       	movw	r30, r24
+ 25a:	f2 95       	swap	r31
+ 25c:	e2 95       	swap	r30
+ 25e:	ef 70       	andi	r30, 0x0F	; 15
+ 260:	ef 27       	eor	r30, r31
+ 262:	ff 70       	andi	r31, 0x0F	; 15
+ 264:	ef 27       	eor	r30, r31
+ 266:	ee 9d       	mul	r30, r14
+ 268:	c0 01       	movw	r24, r0
+ 26a:	ef 9d       	mul	r30, r15
+ 26c:	90 0d       	add	r25, r0
+ 26e:	fe 9d       	mul	r31, r14
+ 270:	90 0d       	add	r25, r0
+ 272:	11 24       	eor	r1, r1
+ 274:	f4 01       	movw	r30, r8
+ 276:	e8 1b       	sub	r30, r24
+ 278:	f9 0b       	sbc	r31, r25
+				PORTD = SegOne;
+ 27a:	d2 ba       	out	0x12, r13	; 18
+				PORTB = seg_code[temp];
+ 27c:	a7 d1       	rcall	.+846    	; 0x5cc <__umulhisi3>
+ 27e:	92 95       	swap	r25
+ 280:	82 95       	swap	r24
+ 282:	8f 70       	andi	r24, 0x0F	; 15
+ 284:	89 27       	eor	r24, r25
+ 286:	9f 70       	andi	r25, 0x0F	; 15
+ 288:	89 27       	eor	r24, r25
+ 28a:	a1 e0       	ldi	r26, 0x01	; 1
+ 28c:	b0 e0       	ldi	r27, 0x00	; 0
+ 28e:	ac 0f       	add	r26, r28
+ 290:	bd 1f       	adc	r27, r29
+ 292:	a8 0f       	add	r26, r24
+ 294:	b9 1f       	adc	r27, r25
+ 296:	8c 91       	ld	r24, X
+ 298:	88 bb       	out	0x18, r24	; 24
+ 29a:	89 ef       	ldi	r24, 0xF9	; 249
+ 29c:	90 e0       	ldi	r25, 0x00	; 0
+ 29e:	01 97       	sbiw	r24, 0x01	; 1
+ 2a0:	f1 f7       	brne	.-4      	; 0x29e <main+0x1f4>
+ 2a2:	00 c0       	rjmp	.+0      	; 0x2a4 <main+0x1fa>
+ 2a4:	00 00       	nop
+				_delay_ms(1);
+
+				temp = num / 100;
+				num = num % 100;
+ 2a6:	4f 01       	movw	r8, r30
+ 2a8:	96 94       	lsr	r9
+ 2aa:	87 94       	ror	r8
+ 2ac:	96 94       	lsr	r9
+ 2ae:	87 94       	ror	r8
+ 2b0:	94 01       	movw	r18, r8
+ 2b2:	ab e7       	ldi	r26, 0x7B	; 123
+ 2b4:	b4 e1       	ldi	r27, 0x14	; 20
+ 2b6:	8a d1       	rcall	.+788    	; 0x5cc <__umulhisi3>
+ 2b8:	ac 01       	movw	r20, r24
+ 2ba:	56 95       	lsr	r21
+ 2bc:	47 95       	ror	r20
+ 2be:	04 9f       	mul	r16, r20
+ 2c0:	c0 01       	movw	r24, r0
+ 2c2:	05 9f       	mul	r16, r21
+ 2c4:	90 0d       	add	r25, r0
+ 2c6:	11 24       	eor	r1, r1
+ 2c8:	af 01       	movw	r20, r30
+ 2ca:	48 1b       	sub	r20, r24
+ 2cc:	59 0b       	sbc	r21, r25
+				PORTD = SegTwo;
+ 2ce:	12 bb       	out	0x12, r17	; 18
+				PORTB = seg_code[temp];
+ 2d0:	7d d1       	rcall	.+762    	; 0x5cc <__umulhisi3>
+ 2d2:	96 95       	lsr	r25
+ 2d4:	87 95       	ror	r24
+ 2d6:	e1 e0       	ldi	r30, 0x01	; 1
+ 2d8:	f0 e0       	ldi	r31, 0x00	; 0
+ 2da:	ec 0f       	add	r30, r28
+ 2dc:	fd 1f       	adc	r31, r29
+ 2de:	e8 0f       	add	r30, r24
+ 2e0:	f9 1f       	adc	r31, r25
+ 2e2:	80 81       	ld	r24, Z
+ 2e4:	88 bb       	out	0x18, r24	; 24
+ 2e6:	e9 ef       	ldi	r30, 0xF9	; 249
+ 2e8:	f0 e0       	ldi	r31, 0x00	; 0
+ 2ea:	31 97       	sbiw	r30, 0x01	; 1
+ 2ec:	f1 f7       	brne	.-4      	; 0x2ea <main+0x240>
+ 2ee:	00 c0       	rjmp	.+0      	; 0x2f0 <main+0x246>
+ 2f0:	00 00       	nop
+				_delay_ms(1);
+
+				temp = num / 10;
+				PORTD = SegThree;
+ 2f2:	c2 ba       	out	0x12, r12	; 18
+				PORTB = seg_code[temp];
+ 2f4:	9a 01       	movw	r18, r20
+ 2f6:	ad ec       	ldi	r26, 0xCD	; 205
+ 2f8:	bc ec       	ldi	r27, 0xCC	; 204
+ 2fa:	68 d1       	rcall	.+720    	; 0x5cc <__umulhisi3>
+ 2fc:	96 95       	lsr	r25
+ 2fe:	87 95       	ror	r24
+ 300:	96 95       	lsr	r25
+ 302:	87 95       	ror	r24
+ 304:	96 95       	lsr	r25
+ 306:	87 95       	ror	r24
+ 308:	e1 e0       	ldi	r30, 0x01	; 1
+ 30a:	f0 e0       	ldi	r31, 0x00	; 0
+ 30c:	ec 0f       	add	r30, r28
+ 30e:	fd 1f       	adc	r31, r29
+ 310:	e8 0f       	add	r30, r24
+ 312:	f9 1f       	adc	r31, r25
+ 314:	20 81       	ld	r18, Z
+ 316:	28 bb       	out	0x18, r18	; 24
+ 318:	e9 ef       	ldi	r30, 0xF9	; 249
+ 31a:	f0 e0       	ldi	r31, 0x00	; 0
+ 31c:	31 97       	sbiw	r30, 0x01	; 1
+ 31e:	f1 f7       	brne	.-4      	; 0x31c <main+0x272>
+ 320:	00 c0       	rjmp	.+0      	; 0x322 <main+0x278>
+ 322:	00 00       	nop
+ 324:	72 ba       	out	0x12, r7	; 18
+				_delay_ms(1);
+
+				temp = num % 10;
+				PORTD = SegFour;
+ 326:	9c 01       	movw	r18, r24
+				PORTB = seg_code[temp];
+ 328:	22 0f       	add	r18, r18
+ 32a:	33 1f       	adc	r19, r19
+ 32c:	88 0f       	add	r24, r24
+ 32e:	99 1f       	adc	r25, r25
+ 330:	88 0f       	add	r24, r24
+ 332:	99 1f       	adc	r25, r25
+ 334:	88 0f       	add	r24, r24
+ 336:	99 1f       	adc	r25, r25
+ 338:	82 0f       	add	r24, r18
+ 33a:	93 1f       	adc	r25, r19
+ 33c:	48 1b       	sub	r20, r24
+ 33e:	59 0b       	sbc	r21, r25
+ 340:	e1 e0       	ldi	r30, 0x01	; 1
+ 342:	f0 e0       	ldi	r31, 0x00	; 0
+ 344:	ec 0f       	add	r30, r28
+ 346:	fd 1f       	adc	r31, r29
+ 348:	e4 0f       	add	r30, r20
+ 34a:	f5 1f       	adc	r31, r21
+ 34c:	80 81       	ld	r24, Z
+ 34e:	88 bb       	out	0x18, r24	; 24
+ 350:	89 ef       	ldi	r24, 0xF9	; 249
+ 352:	90 e0       	ldi	r25, 0x00	; 0
+ 354:	01 97       	sbiw	r24, 0x01	; 1
+ 356:	f1 f7       	brne	.-4      	; 0x354 <main+0x2aa>
+ 358:	00 c0       	rjmp	.+0      	; 0x35a <main+0x2b0>
+ 35a:	00 00       	nop
+ 35c:	91 e0       	ldi	r25, 0x01	; 1
+ 35e:	a9 1a       	sub	r10, r25
+ 360:	b1 08       	sbc	r11, r1
+				temp = num % 10;
+				PORTD = SegFour;
+				PORTB = seg_code[temp];
+				_delay_ms(1);
+			}
+			for (i = 0; i < 100; i++)
+ 362:	09 f0       	breq	.+2      	; 0x366 <main+0x2bc>
+ 364:	6c cf       	rjmp	.-296    	; 0x23e <main+0x194>
+ 366:	0f 2e       	mov	r0, r31
+ 368:	f4 e6       	ldi	r31, 0x64	; 100
+ 36a:	af 2e       	mov	r10, r31
+ 36c:	b1 2c       	mov	r11, r1
+ 36e:	f0 2d       	mov	r31, r0
+				PORTB = seg_code[temp];
+				_delay_ms(1);
+			}
+			for (i = 0; i < 100; i++)
+			{
+				num = Front_Left();
+ 370:	90 de       	rcall	.-736    	; 0x92 <Front_Left>
+ 372:	4c 01       	movw	r8, r24
+				temp = num / 1000;
+				num = num % 1000;
+ 374:	ac 01       	movw	r20, r24
+ 376:	56 95       	lsr	r21
+ 378:	47 95       	ror	r20
+ 37a:	56 95       	lsr	r21
+ 37c:	47 95       	ror	r20
+ 37e:	56 95       	lsr	r21
+ 380:	47 95       	ror	r20
+ 382:	9a 01       	movw	r18, r20
+ 384:	a5 ec       	ldi	r26, 0xC5	; 197
+ 386:	b0 e2       	ldi	r27, 0x20	; 32
+ 388:	21 d1       	rcall	.+578    	; 0x5cc <__umulhisi3>
+ 38a:	fc 01       	movw	r30, r24
+ 38c:	f2 95       	swap	r31
+ 38e:	e2 95       	swap	r30
+ 390:	ef 70       	andi	r30, 0x0F	; 15
+ 392:	ef 27       	eor	r30, r31
+ 394:	ff 70       	andi	r31, 0x0F	; 15
+ 396:	ef 27       	eor	r30, r31
+ 398:	ee 9d       	mul	r30, r14
+ 39a:	c0 01       	movw	r24, r0
+ 39c:	ef 9d       	mul	r30, r15
+ 39e:	90 0d       	add	r25, r0
+ 3a0:	fe 9d       	mul	r31, r14
+ 3a2:	90 0d       	add	r25, r0
+ 3a4:	11 24       	eor	r1, r1
+ 3a6:	f4 01       	movw	r30, r8
+ 3a8:	e8 1b       	sub	r30, r24
+ 3aa:	f9 0b       	sbc	r31, r25
+				PORTD = SegOne;
+ 3ac:	d2 ba       	out	0x12, r13	; 18
+				PORTB = seg_code[temp];
+ 3ae:	0e d1       	rcall	.+540    	; 0x5cc <__umulhisi3>
+ 3b0:	92 95       	swap	r25
+ 3b2:	82 95       	swap	r24
+ 3b4:	8f 70       	andi	r24, 0x0F	; 15
+ 3b6:	89 27       	eor	r24, r25
+ 3b8:	9f 70       	andi	r25, 0x0F	; 15
+ 3ba:	89 27       	eor	r24, r25
+ 3bc:	a1 e0       	ldi	r26, 0x01	; 1
+ 3be:	b0 e0       	ldi	r27, 0x00	; 0
+ 3c0:	ac 0f       	add	r26, r28
+ 3c2:	bd 1f       	adc	r27, r29
+ 3c4:	a8 0f       	add	r26, r24
+ 3c6:	b9 1f       	adc	r27, r25
+ 3c8:	8c 91       	ld	r24, X
+ 3ca:	88 bb       	out	0x18, r24	; 24
+ 3cc:	89 ef       	ldi	r24, 0xF9	; 249
+ 3ce:	90 e0       	ldi	r25, 0x00	; 0
+ 3d0:	01 97       	sbiw	r24, 0x01	; 1
+ 3d2:	f1 f7       	brne	.-4      	; 0x3d0 <main+0x326>
+ 3d4:	00 c0       	rjmp	.+0      	; 0x3d6 <main+0x32c>
+ 3d6:	00 00       	nop
+				_delay_ms(1);
+
+				temp = num / 100;
+				num = num % 100;
+ 3d8:	4f 01       	movw	r8, r30
+ 3da:	96 94       	lsr	r9
+ 3dc:	87 94       	ror	r8
+ 3de:	96 94       	lsr	r9
+ 3e0:	87 94       	ror	r8
+ 3e2:	94 01       	movw	r18, r8
+ 3e4:	ab e7       	ldi	r26, 0x7B	; 123
+ 3e6:	b4 e1       	ldi	r27, 0x14	; 20
+ 3e8:	f1 d0       	rcall	.+482    	; 0x5cc <__umulhisi3>
+ 3ea:	ac 01       	movw	r20, r24
+ 3ec:	56 95       	lsr	r21
+ 3ee:	47 95       	ror	r20
+ 3f0:	04 9f       	mul	r16, r20
+ 3f2:	c0 01       	movw	r24, r0
+ 3f4:	05 9f       	mul	r16, r21
+ 3f6:	90 0d       	add	r25, r0
+ 3f8:	11 24       	eor	r1, r1
+ 3fa:	af 01       	movw	r20, r30
+ 3fc:	48 1b       	sub	r20, r24
+ 3fe:	59 0b       	sbc	r21, r25
+				PORTD = SegTwo;
+ 400:	12 bb       	out	0x12, r17	; 18
+				PORTB = seg_code[temp];
+ 402:	e4 d0       	rcall	.+456    	; 0x5cc <__umulhisi3>
+ 404:	96 95       	lsr	r25
+ 406:	87 95       	ror	r24
+ 408:	e1 e0       	ldi	r30, 0x01	; 1
+ 40a:	f0 e0       	ldi	r31, 0x00	; 0
+ 40c:	ec 0f       	add	r30, r28
+ 40e:	fd 1f       	adc	r31, r29
+ 410:	e8 0f       	add	r30, r24
+ 412:	f9 1f       	adc	r31, r25
+ 414:	80 81       	ld	r24, Z
+ 416:	88 bb       	out	0x18, r24	; 24
+ 418:	e9 ef       	ldi	r30, 0xF9	; 249
+ 41a:	f0 e0       	ldi	r31, 0x00	; 0
+ 41c:	31 97       	sbiw	r30, 0x01	; 1
+ 41e:	f1 f7       	brne	.-4      	; 0x41c <__LOCK_REGION_LENGTH__+0x1c>
+ 420:	00 c0       	rjmp	.+0      	; 0x422 <__LOCK_REGION_LENGTH__+0x22>
+ 422:	00 00       	nop
+				_delay_ms(1);
+
+				temp = num / 10;
+				PORTD = SegThree;
+ 424:	c2 ba       	out	0x12, r12	; 18
+				PORTB = seg_code[temp];
+ 426:	9a 01       	movw	r18, r20
+ 428:	ad ec       	ldi	r26, 0xCD	; 205
+ 42a:	bc ec       	ldi	r27, 0xCC	; 204
+ 42c:	cf d0       	rcall	.+414    	; 0x5cc <__umulhisi3>
+ 42e:	96 95       	lsr	r25
+ 430:	87 95       	ror	r24
+ 432:	96 95       	lsr	r25
+ 434:	87 95       	ror	r24
+ 436:	96 95       	lsr	r25
+ 438:	87 95       	ror	r24
+ 43a:	e1 e0       	ldi	r30, 0x01	; 1
+ 43c:	f0 e0       	ldi	r31, 0x00	; 0
+ 43e:	ec 0f       	add	r30, r28
+ 440:	fd 1f       	adc	r31, r29
+ 442:	e8 0f       	add	r30, r24
+ 444:	f9 1f       	adc	r31, r25
+ 446:	20 81       	ld	r18, Z
+ 448:	28 bb       	out	0x18, r18	; 24
+ 44a:	e9 ef       	ldi	r30, 0xF9	; 249
+ 44c:	f0 e0       	ldi	r31, 0x00	; 0
+ 44e:	31 97       	sbiw	r30, 0x01	; 1
+ 450:	f1 f7       	brne	.-4      	; 0x44e <__LOCK_REGION_LENGTH__+0x4e>
+ 452:	00 c0       	rjmp	.+0      	; 0x454 <__LOCK_REGION_LENGTH__+0x54>
+ 454:	00 00       	nop
+ 456:	72 ba       	out	0x12, r7	; 18
+				_delay_ms(1);
+
+				temp = num % 10;
+				PORTD = SegFour;
+ 458:	9c 01       	movw	r18, r24
+				PORTB = seg_code[temp];
+ 45a:	22 0f       	add	r18, r18
+ 45c:	33 1f       	adc	r19, r19
+ 45e:	88 0f       	add	r24, r24
+ 460:	99 1f       	adc	r25, r25
+ 462:	88 0f       	add	r24, r24
+ 464:	99 1f       	adc	r25, r25
+ 466:	88 0f       	add	r24, r24
+ 468:	99 1f       	adc	r25, r25
+ 46a:	82 0f       	add	r24, r18
+ 46c:	93 1f       	adc	r25, r19
+ 46e:	48 1b       	sub	r20, r24
+ 470:	59 0b       	sbc	r21, r25
+ 472:	e1 e0       	ldi	r30, 0x01	; 1
+ 474:	f0 e0       	ldi	r31, 0x00	; 0
+ 476:	ec 0f       	add	r30, r28
+ 478:	fd 1f       	adc	r31, r29
+ 47a:	e4 0f       	add	r30, r20
+ 47c:	f5 1f       	adc	r31, r21
+ 47e:	80 81       	ld	r24, Z
+ 480:	88 bb       	out	0x18, r24	; 24
+ 482:	89 ef       	ldi	r24, 0xF9	; 249
+ 484:	90 e0       	ldi	r25, 0x00	; 0
+ 486:	01 97       	sbiw	r24, 0x01	; 1
+ 488:	f1 f7       	brne	.-4      	; 0x486 <__LOCK_REGION_LENGTH__+0x86>
+ 48a:	00 c0       	rjmp	.+0      	; 0x48c <__LOCK_REGION_LENGTH__+0x8c>
+ 48c:	00 00       	nop
+ 48e:	91 e0       	ldi	r25, 0x01	; 1
+ 490:	a9 1a       	sub	r10, r25
+ 492:	b1 08       	sbc	r11, r1
+				temp = num % 10;
+				PORTD = SegFour;
+				PORTB = seg_code[temp];
+				_delay_ms(1);
+			}
+			for (i = 0; i < 100; i++)
+ 494:	09 f0       	breq	.+2      	; 0x498 <__LOCK_REGION_LENGTH__+0x98>
+ 496:	6c cf       	rjmp	.-296    	; 0x370 <main+0x2c6>
+ 498:	0f 2e       	mov	r0, r31
+ 49a:	f4 e6       	ldi	r31, 0x64	; 100
+ 49c:	af 2e       	mov	r10, r31
+ 49e:	b1 2c       	mov	r11, r1
+				PORTB = seg_code[temp];
+				_delay_ms(1);
+			}
+			for (i = 0; i < 100; i++)
+			{
+				num = Front_Right();
+ 4a0:	f0 2d       	mov	r31, r0
+ 4a2:	fa dd       	rcall	.-1036   	; 0x98 <Front_Right>
+ 4a4:	4c 01       	movw	r8, r24
+				temp = num / 1000;
+				num = num % 1000;
+ 4a6:	ac 01       	movw	r20, r24
+ 4a8:	56 95       	lsr	r21
+ 4aa:	47 95       	ror	r20
+ 4ac:	56 95       	lsr	r21
+ 4ae:	47 95       	ror	r20
+ 4b0:	56 95       	lsr	r21
+ 4b2:	47 95       	ror	r20
+ 4b4:	9a 01       	movw	r18, r20
+ 4b6:	a5 ec       	ldi	r26, 0xC5	; 197
+ 4b8:	b0 e2       	ldi	r27, 0x20	; 32
+ 4ba:	88 d0       	rcall	.+272    	; 0x5cc <__umulhisi3>
+ 4bc:	fc 01       	movw	r30, r24
+ 4be:	f2 95       	swap	r31
+ 4c0:	e2 95       	swap	r30
+ 4c2:	ef 70       	andi	r30, 0x0F	; 15
+ 4c4:	ef 27       	eor	r30, r31
+ 4c6:	ff 70       	andi	r31, 0x0F	; 15
+ 4c8:	ef 27       	eor	r30, r31
+ 4ca:	ee 9d       	mul	r30, r14
+ 4cc:	c0 01       	movw	r24, r0
+ 4ce:	ef 9d       	mul	r30, r15
+ 4d0:	90 0d       	add	r25, r0
+ 4d2:	fe 9d       	mul	r31, r14
+ 4d4:	90 0d       	add	r25, r0
+ 4d6:	11 24       	eor	r1, r1
+ 4d8:	f4 01       	movw	r30, r8
+ 4da:	e8 1b       	sub	r30, r24
+ 4dc:	f9 0b       	sbc	r31, r25
+				PORTD = SegOne;
+ 4de:	d2 ba       	out	0x12, r13	; 18
+				PORTB = seg_code[temp];
+ 4e0:	75 d0       	rcall	.+234    	; 0x5cc <__umulhisi3>
+ 4e2:	92 95       	swap	r25
+ 4e4:	82 95       	swap	r24
+ 4e6:	8f 70       	andi	r24, 0x0F	; 15
+ 4e8:	89 27       	eor	r24, r25
+ 4ea:	9f 70       	andi	r25, 0x0F	; 15
+ 4ec:	89 27       	eor	r24, r25
+ 4ee:	a1 e0       	ldi	r26, 0x01	; 1
+ 4f0:	b0 e0       	ldi	r27, 0x00	; 0
+ 4f2:	ac 0f       	add	r26, r28
+ 4f4:	bd 1f       	adc	r27, r29
+ 4f6:	a8 0f       	add	r26, r24
+ 4f8:	b9 1f       	adc	r27, r25
+ 4fa:	8c 91       	ld	r24, X
+ 4fc:	88 bb       	out	0x18, r24	; 24
+ 4fe:	89 ef       	ldi	r24, 0xF9	; 249
+ 500:	90 e0       	ldi	r25, 0x00	; 0
+ 502:	01 97       	sbiw	r24, 0x01	; 1
+ 504:	f1 f7       	brne	.-4      	; 0x502 <__LOCK_REGION_LENGTH__+0x102>
+ 506:	00 c0       	rjmp	.+0      	; 0x508 <__LOCK_REGION_LENGTH__+0x108>
+ 508:	00 00       	nop
+				_delay_ms(1);
+
+				temp = num / 100;
+				num = num % 100;
+ 50a:	4f 01       	movw	r8, r30
+ 50c:	96 94       	lsr	r9
+ 50e:	87 94       	ror	r8
+ 510:	96 94       	lsr	r9
+ 512:	87 94       	ror	r8
+ 514:	94 01       	movw	r18, r8
+ 516:	ab e7       	ldi	r26, 0x7B	; 123
+ 518:	b4 e1       	ldi	r27, 0x14	; 20
+ 51a:	58 d0       	rcall	.+176    	; 0x5cc <__umulhisi3>
+ 51c:	ac 01       	movw	r20, r24
+ 51e:	56 95       	lsr	r21
+ 520:	47 95       	ror	r20
+ 522:	04 9f       	mul	r16, r20
+ 524:	c0 01       	movw	r24, r0
+ 526:	05 9f       	mul	r16, r21
+ 528:	90 0d       	add	r25, r0
+ 52a:	11 24       	eor	r1, r1
+ 52c:	af 01       	movw	r20, r30
+ 52e:	48 1b       	sub	r20, r24
+ 530:	59 0b       	sbc	r21, r25
+				PORTD = SegTwo;
+				PORTB = seg_code[temp];
+ 532:	12 bb       	out	0x12, r17	; 18
+ 534:	4b d0       	rcall	.+150    	; 0x5cc <__umulhisi3>
+ 536:	96 95       	lsr	r25
+ 538:	87 95       	ror	r24
+ 53a:	e1 e0       	ldi	r30, 0x01	; 1
+ 53c:	f0 e0       	ldi	r31, 0x00	; 0
+ 53e:	ec 0f       	add	r30, r28
+ 540:	fd 1f       	adc	r31, r29
+ 542:	e8 0f       	add	r30, r24
+ 544:	f9 1f       	adc	r31, r25
+ 546:	80 81       	ld	r24, Z
+ 548:	88 bb       	out	0x18, r24	; 24
+ 54a:	e9 ef       	ldi	r30, 0xF9	; 249
+ 54c:	f0 e0       	ldi	r31, 0x00	; 0
+ 54e:	31 97       	sbiw	r30, 0x01	; 1
+ 550:	f1 f7       	brne	.-4      	; 0x54e <__LOCK_REGION_LENGTH__+0x14e>
+ 552:	00 c0       	rjmp	.+0      	; 0x554 <__LOCK_REGION_LENGTH__+0x154>
+ 554:	00 00       	nop
+				_delay_ms(1);
+
+				temp = num / 10;
+				PORTD = SegThree;
+ 556:	c2 ba       	out	0x12, r12	; 18
+				PORTB = seg_code[temp];
+ 558:	9a 01       	movw	r18, r20
+ 55a:	ad ec       	ldi	r26, 0xCD	; 205
+ 55c:	bc ec       	ldi	r27, 0xCC	; 204
+ 55e:	36 d0       	rcall	.+108    	; 0x5cc <__umulhisi3>
+ 560:	96 95       	lsr	r25
+ 562:	87 95       	ror	r24
+ 564:	96 95       	lsr	r25
+ 566:	87 95       	ror	r24
+ 568:	96 95       	lsr	r25
+ 56a:	87 95       	ror	r24
+ 56c:	e1 e0       	ldi	r30, 0x01	; 1
+ 56e:	f0 e0       	ldi	r31, 0x00	; 0
+ 570:	ec 0f       	add	r30, r28
+ 572:	fd 1f       	adc	r31, r29
+ 574:	e8 0f       	add	r30, r24
+ 576:	f9 1f       	adc	r31, r25
+ 578:	20 81       	ld	r18, Z
+ 57a:	28 bb       	out	0x18, r18	; 24
+ 57c:	e9 ef       	ldi	r30, 0xF9	; 249
+ 57e:	f0 e0       	ldi	r31, 0x00	; 0
+ 580:	31 97       	sbiw	r30, 0x01	; 1
+ 582:	f1 f7       	brne	.-4      	; 0x580 <__LOCK_REGION_LENGTH__+0x180>
+ 584:	00 c0       	rjmp	.+0      	; 0x586 <__LOCK_REGION_LENGTH__+0x186>
+ 586:	00 00       	nop
+ 588:	72 ba       	out	0x12, r7	; 18
+				_delay_ms(1);
+
+				temp = num % 10;
+				PORTD = SegFour;
+ 58a:	9c 01       	movw	r18, r24
+				PORTB = seg_code[temp];
+ 58c:	22 0f       	add	r18, r18
+ 58e:	33 1f       	adc	r19, r19
+ 590:	88 0f       	add	r24, r24
+ 592:	99 1f       	adc	r25, r25
+ 594:	88 0f       	add	r24, r24
+ 596:	99 1f       	adc	r25, r25
+ 598:	88 0f       	add	r24, r24
+ 59a:	99 1f       	adc	r25, r25
+ 59c:	82 0f       	add	r24, r18
+ 59e:	93 1f       	adc	r25, r19
+ 5a0:	48 1b       	sub	r20, r24
+ 5a2:	59 0b       	sbc	r21, r25
+ 5a4:	e1 e0       	ldi	r30, 0x01	; 1
+ 5a6:	f0 e0       	ldi	r31, 0x00	; 0
+ 5a8:	ec 0f       	add	r30, r28
+ 5aa:	fd 1f       	adc	r31, r29
+ 5ac:	e4 0f       	add	r30, r20
+ 5ae:	f5 1f       	adc	r31, r21
+ 5b0:	80 81       	ld	r24, Z
+ 5b2:	88 bb       	out	0x18, r24	; 24
+ 5b4:	89 ef       	ldi	r24, 0xF9	; 249
+ 5b6:	90 e0       	ldi	r25, 0x00	; 0
+ 5b8:	01 97       	sbiw	r24, 0x01	; 1
+ 5ba:	f1 f7       	brne	.-4      	; 0x5b8 <__LOCK_REGION_LENGTH__+0x1b8>
+ 5bc:	00 c0       	rjmp	.+0      	; 0x5be <__LOCK_REGION_LENGTH__+0x1be>
+ 5be:	00 00       	nop
+ 5c0:	91 e0       	ldi	r25, 0x01	; 1
+ 5c2:	a9 1a       	sub	r10, r25
+ 5c4:	b1 08       	sbc	r11, r1
+ 5c6:	09 f0       	breq	.+2      	; 0x5ca <__LOCK_REGION_LENGTH__+0x1ca>
+				temp = num % 10;
+				PORTD = SegFour;
+				PORTB = seg_code[temp];
+				_delay_ms(1);
+			}
+			for (i = 0; i < 100; i++)
+ 5c8:	6c cf       	rjmp	.-296    	; 0x4a2 <__LOCK_REGION_LENGTH__+0xa2>
+ 5ca:	9b cd       	rjmp	.-1226   	; 0x102 <main+0x58>
+
+000005cc <__umulhisi3>:
+ 5cc:	a2 9f       	mul	r26, r18
+ 5ce:	b0 01       	movw	r22, r0
+ 5d0:	b3 9f       	mul	r27, r19
+ 5d2:	c0 01       	movw	r24, r0
+ 5d4:	a3 9f       	mul	r26, r19
+ 5d6:	70 0d       	add	r23, r0
+ 5d8:	81 1d       	adc	r24, r1
+ 5da:	11 24       	eor	r1, r1
+ 5dc:	91 1d       	adc	r25, r1
+ 5de:	b2 9f       	mul	r27, r18
+ 5e0:	70 0d       	add	r23, r0
+ 5e2:	81 1d       	adc	r24, r1
+ 5e4:	11 24       	eor	r1, r1
+ 5e6:	91 1d       	adc	r25, r1
+ 5e8:	08 95       	ret
+
+000005ea <_exit>:
+ 5ea:	f8 94       	cli
+
+000005ec <__stop_program>:
+ 5ec:	ff cf       	rjmp	.-2      	; 0x5ec <__stop_program>

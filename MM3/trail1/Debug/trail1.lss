@@ -1,0 +1,256 @@
+
+trail1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000012c  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  000001a0  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000004  00800060  00800060  000001a0  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000001a0  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000001d0  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000110  00000000  00000000  0000020c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00000d4f  00000000  00000000  0000031c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000007fb  00000000  00000000  0000106b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000dd0  00000000  00000000  00001866  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000228  00000000  00000000  00002638  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00006527  00000000  00000000  00002860  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    000005ff  00000000  00000000  00008d87  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000000d0  00000000  00000000  00009386  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_macro  0000230c  00000000  00000000  00009456  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	29 c0       	rjmp	.+82     	; 0x54 <__ctors_end>
+   2:	00 00       	nop
+   4:	40 c0       	rjmp	.+128    	; 0x86 <__vector_1>
+   6:	00 00       	nop
+   8:	55 c0       	rjmp	.+170    	; 0xb4 <__vector_2>
+   a:	00 00       	nop
+   c:	33 c0       	rjmp	.+102    	; 0x74 <__bad_interrupt>
+   e:	00 00       	nop
+  10:	31 c0       	rjmp	.+98     	; 0x74 <__bad_interrupt>
+  12:	00 00       	nop
+  14:	2f c0       	rjmp	.+94     	; 0x74 <__bad_interrupt>
+  16:	00 00       	nop
+  18:	2d c0       	rjmp	.+90     	; 0x74 <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	2b c0       	rjmp	.+86     	; 0x74 <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	29 c0       	rjmp	.+82     	; 0x74 <__bad_interrupt>
+  22:	00 00       	nop
+  24:	27 c0       	rjmp	.+78     	; 0x74 <__bad_interrupt>
+  26:	00 00       	nop
+  28:	25 c0       	rjmp	.+74     	; 0x74 <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	23 c0       	rjmp	.+70     	; 0x74 <__bad_interrupt>
+  2e:	00 00       	nop
+  30:	21 c0       	rjmp	.+66     	; 0x74 <__bad_interrupt>
+  32:	00 00       	nop
+  34:	1f c0       	rjmp	.+62     	; 0x74 <__bad_interrupt>
+  36:	00 00       	nop
+  38:	1d c0       	rjmp	.+58     	; 0x74 <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	1b c0       	rjmp	.+54     	; 0x74 <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	19 c0       	rjmp	.+50     	; 0x74 <__bad_interrupt>
+  42:	00 00       	nop
+  44:	17 c0       	rjmp	.+46     	; 0x74 <__bad_interrupt>
+  46:	00 00       	nop
+  48:	15 c0       	rjmp	.+42     	; 0x74 <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	13 c0       	rjmp	.+38     	; 0x74 <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	11 c0       	rjmp	.+34     	; 0x74 <__bad_interrupt>
+	...
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_clear_bss>:
+  60:	20 e0       	ldi	r18, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	01 c0       	rjmp	.+2      	; 0x6a <.do_clear_bss_start>
+
+00000068 <.do_clear_bss_loop>:
+  68:	1d 92       	st	X+, r1
+
+0000006a <.do_clear_bss_start>:
+  6a:	a4 36       	cpi	r26, 0x64	; 100
+  6c:	b2 07       	cpc	r27, r18
+  6e:	e1 f7       	brne	.-8      	; 0x68 <.do_clear_bss_loop>
+  70:	56 d0       	rcall	.+172    	; 0x11e <main>
+  72:	5a c0       	rjmp	.+180    	; 0x128 <_exit>
+
+00000074 <__bad_interrupt>:
+  74:	c5 cf       	rjmp	.-118    	; 0x0 <__vectors>
+
+00000076 <INT_init>:
+	// if 20 slots and 20 holes then one cycle
+	//one cycle means 2*3pi
+	float cycles = Slots/40;
+	float Distance = cycles*2*3*22/7;
+	return Distance;
+}
+  76:	78 94       	sei
+  78:	85 b7       	in	r24, 0x35	; 53
+  7a:	81 60       	ori	r24, 0x01	; 1
+  7c:	85 bf       	out	0x35, r24	; 53
+  7e:	8b b7       	in	r24, 0x3b	; 59
+  80:	80 6c       	ori	r24, 0xC0	; 192
+  82:	8b bf       	out	0x3b, r24	; 59
+  84:	08 95       	ret
+
+00000086 <__vector_1>:
+
+ISR(INT0_vect){
+  86:	1f 92       	push	r1
+  88:	0f 92       	push	r0
+  8a:	0f b6       	in	r0, 0x3f	; 63
+  8c:	0f 92       	push	r0
+  8e:	11 24       	eor	r1, r1
+  90:	8f 93       	push	r24
+  92:	9f 93       	push	r25
+	Right_Counter++;
+  94:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <Right_Counter>
+  98:	90 91 63 00 	lds	r25, 0x0063	; 0x800063 <Right_Counter+0x1>
+  9c:	01 96       	adiw	r24, 0x01	; 1
+  9e:	90 93 63 00 	sts	0x0063, r25	; 0x800063 <Right_Counter+0x1>
+  a2:	80 93 62 00 	sts	0x0062, r24	; 0x800062 <Right_Counter>
+}
+  a6:	9f 91       	pop	r25
+  a8:	8f 91       	pop	r24
+  aa:	0f 90       	pop	r0
+  ac:	0f be       	out	0x3f, r0	; 63
+  ae:	0f 90       	pop	r0
+  b0:	1f 90       	pop	r1
+  b2:	18 95       	reti
+
+000000b4 <__vector_2>:
+
+ISR(INT1_vect){
+  b4:	1f 92       	push	r1
+  b6:	0f 92       	push	r0
+  b8:	0f b6       	in	r0, 0x3f	; 63
+  ba:	0f 92       	push	r0
+  bc:	11 24       	eor	r1, r1
+  be:	8f 93       	push	r24
+  c0:	9f 93       	push	r25
+	Left_Counter++;
+  c2:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+  c6:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+  ca:	01 96       	adiw	r24, 0x01	; 1
+  cc:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+  d0:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+}
+  d4:	9f 91       	pop	r25
+  d6:	8f 91       	pop	r24
+  d8:	0f 90       	pop	r0
+  da:	0f be       	out	0x3f, r0	; 63
+  dc:	0f 90       	pop	r0
+  de:	1f 90       	pop	r1
+  e0:	18 95       	reti
+
+000000e2 <Motor_init>:
+#include "Encoder.h"
+#include "Motor.h"
+
+
+void Motor_init(){
+	DDRB |= (1<<PB0)|(1<<PB1)|(1<<PB2)|(1<<PB4);
+  e2:	87 b3       	in	r24, 0x17	; 23
+  e4:	87 61       	ori	r24, 0x17	; 23
+  e6:	87 bb       	out	0x17, r24	; 23
+  e8:	08 95       	ret
+
+000000ea <PWM_init>:
+}
+void PWM_init(){
+	//PWM0
+	TCCR0 |=(1<<WGM01) | (1<<WGM00); // enable fast PWM
+  ea:	83 b7       	in	r24, 0x33	; 51
+  ec:	88 64       	ori	r24, 0x48	; 72
+  ee:	83 bf       	out	0x33, r24	; 51
+	TCCR0 |=(1<<COM01); // Clear OC0 on compare match, set OC0 at BOTTOM.
+  f0:	83 b7       	in	r24, 0x33	; 51
+  f2:	80 62       	ori	r24, 0x20	; 32
+  f4:	83 bf       	out	0x33, r24	; 51
+	TCCR0 |=(1<<CS01) | (1<<CS02);  // set PRE-scaling with /1024
+  f6:	83 b7       	in	r24, 0x33	; 51
+  f8:	86 60       	ori	r24, 0x06	; 6
+  fa:	83 bf       	out	0x33, r24	; 51
+	
+	
+	//PWM1
+	TCCR1A |=(1<<COM1A1); // Clear OC1A on compare match (Set output to low level)
+  fc:	8f b5       	in	r24, 0x2f	; 47
+  fe:	80 68       	ori	r24, 0x80	; 128
+ 100:	8f bd       	out	0x2f, r24	; 47
+	TCCR1A |=(1<<WGM12) | (1<<WGM10); //Fast PWM, 8-bit
+ 102:	8f b5       	in	r24, 0x2f	; 47
+ 104:	89 60       	ori	r24, 0x09	; 9
+ 106:	8f bd       	out	0x2f, r24	; 47
+	TCCR1A |=(1<<CS10) | (1<<CS12);  // set PRE-scaling with /1024
+ 108:	8f b5       	in	r24, 0x2f	; 47
+ 10a:	85 60       	ori	r24, 0x05	; 5
+ 10c:	8f bd       	out	0x2f, r24	; 47
+ 10e:	08 95       	ret
+
+00000110 <ADC_init>:
+	PORTD &= ~(1 << PD7); //disable the Transmitters
+}
+
+void ADC_init()
+{
+	ADMUX = (1<<REFS0); // AVCC with external capacitor at AREF pin
+ 110:	80 e4       	ldi	r24, 0x40	; 64
+ 112:	87 b9       	out	0x07, r24	; 7
+	ADCSRA |= (1 << ADEN); // Enable ADC
+ 114:	37 9a       	sbi	0x06, 7	; 6
+	ADCSRA |= (1<<ADEN)|(1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0); // pr-scaler = 128
+ 116:	86 b1       	in	r24, 0x06	; 6
+ 118:	87 68       	ori	r24, 0x87	; 135
+ 11a:	86 b9       	out	0x06, r24	; 6
+ 11c:	08 95       	ret
+
+0000011e <main>:
+
+
+int main (void)
+{
+	
+	Motor_init();
+ 11e:	e1 df       	rcall	.-62     	; 0xe2 <Motor_init>
+	PWM_init();
+ 120:	e4 df       	rcall	.-56     	; 0xea <PWM_init>
+	ADC_init(); // initialize the ADC
+ 122:	f6 df       	rcall	.-20     	; 0x110 <ADC_init>
+ 124:	a8 df       	rcall	.-176    	; 0x76 <INT_init>
+	INT_init();
+ 126:	ff cf       	rjmp	.-2      	; 0x126 <main+0x8>
+
+00000128 <_exit>:
+ 128:	f8 94       	cli
+
+0000012a <__stop_program>:
+ 12a:	ff cf       	rjmp	.-2      	; 0x12a <__stop_program>
